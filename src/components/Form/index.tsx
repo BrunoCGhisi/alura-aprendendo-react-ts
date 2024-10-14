@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button";
-import style from "./form.module.scss";
+import style from "./Form.module.scss";
 
 class Form extends React.Component {
   render() {
@@ -29,7 +29,9 @@ class Form extends React.Component {
             required
           />
         </div>
-        <Button />
+        <Button>
+          Adicionar
+        </Button>
       </form>
     );
   }

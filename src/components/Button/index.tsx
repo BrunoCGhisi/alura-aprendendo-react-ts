@@ -1,9 +1,16 @@
 import React from "react";
-import style from "./button.module.scss";
+import style from "./Button.module.scss";
 
-class Button extends React.Component {
+
+type ButtonProps = React.PropsWithChildren<{}>;
+
+class Button extends React.Component<ButtonProps> {
   render() {
-    return <button className={style.button}>Adicionar</button>;
+    return (
+      <button className={style.button}>
+        {this.props.children}
+      </button>
+    );
   }
 }
 
