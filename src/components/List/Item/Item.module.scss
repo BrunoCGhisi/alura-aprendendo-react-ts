@@ -26,11 +26,11 @@
   box-shadow: 2px 4px 4px #0000009F inset;
 }
 
-.itemCompletado {
+.finishedItem {
   background-color: #566F42;
   cursor: auto;
 
-  .concluido {
+  .finished {
     display: block;
     background-image: url('../../../assets/image/check-mark.svg');
     background-repeat: no-repeat;

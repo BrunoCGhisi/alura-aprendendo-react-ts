@@ -18,11 +18,30 @@ function App() {
       }))
     );
   }
+
+  function finishHomeWork() {
+    if (selected) {
+      setSelected(undefined);
+      setHomeWorks((oldHomeWorks) =>
+        oldHomeWorks.map((homeWork) => {
+          if (homeWork.id === selected.id) {
+            return {
+              ...homeWork,
+              selected: false,
+              finished: true,
+            };
+          }
+          return homeWork;
+        })
+      );
+    }
+  }
+
   return (
     <div className={style.AppStyle}>
       <Form setHomeWorks={setHomeWorks} />
       <List homeWorks={homeWorks} selectHomeWork={selectHomeWork} />
-      <Timer selected={selected} />
+      <Timer selected={selected} finishHomeWork={finishHomeWork} />
     </div>
   );
 }

@@ -18,8 +18,11 @@ export default function Item({
 
   return (
     <li
-      className={`${style.item} ${selected ? style.selectedItem : ""}`}
+      className={`${style.item} ${selected ? style.selectedItem : ""} ${
+        finished ? style.finishedItem : ""
+      }`}
       onClick={() =>
+        !finished &&
         selectHomeWork({
           homeWork,
           time,
@@ -29,8 +32,11 @@ export default function Item({
         })
       }
     >
-      <h3> {homeWork} </h3>
-      <span> {time} </span>
+      <h3>{homeWork}</h3>
+      <span>{time}</span>
+      {finished && (
+        <span className={style.finished} aria-label="tarefa completada"></span>
+      )}
     </li>
   );
 }
