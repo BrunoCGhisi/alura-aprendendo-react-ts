@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import style from "./List.module.scss";
 import Item from "./Item";
-import IHomeWork from '../../types/homeWorkVO'
+import IHomeWork from "../../types/homeWorkVO";
 
-
-
-function List({ homeWorks}: {homeWorks: IHomeWork[]}) {
-
+interface Props {
+  homeWorks: IHomeWork[];
+  selectHomeWork: (selectedHomeWork: IHomeWork) => void;
+}
+function List({ homeWorks, selectHomeWork }: Props) {
   return (
     <aside className={style.listTask}>
-      <h2>
-        Estudos do dia
-      </h2>
+      <h2>Estudos do dia</h2>
       <ul>
         {homeWorks.map((list, index) => (
           <Item
-            key={index}
+            selectHomeWork={selectHomeWork}
+            key={list.id}
             {...list} //Aqui ele pega TODAS as informações, então pode vir coisa de mais
             //Pode fazer manualmente também. Dessa forma:
             //tarefa={item.tarefa}
