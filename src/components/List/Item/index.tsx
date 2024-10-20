@@ -6,7 +6,7 @@ interface Props extends IHomeWork {
 }
 
 export default function Item({
-  //Declarando os props
+ 
   homeWork,
   time,
   selected,
