@@ -1,18 +1,20 @@
+import IHomeWork from "../../../types/homeWorkVO";
 import style from "../List.module.scss";
 
 export default function Item({
   //Declarando os props
-  tarefa,
-  tempo,
-}: {
-  //Declarando os tipos do props
-  tarefa: string;
-  tempo: string;
-}) {
+  homeWork,
+  time,
+  selected,
+  finished,
+  id,
+}: IHomeWork) {
+  console.log('item atual:', {id})
+
   return (
     <li className={style.item}>
-      <h3> {tarefa} </h3>
-      <span> {tempo} </span>
+      <h3> {homeWork} </h3>
+      <span> {time} </span>
     </li>
   );
 }
